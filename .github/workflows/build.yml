@@ -56,7 +56,7 @@ jobs:
             go mod edit -go="$GO_VERSION"
           fi
 
-          go get github.com/xtls/xray-core@${XRAY_CORE_SHA}
+          go mod edit -replace=github.com/xtls/xray-core=./xray-core-src
           go get golang.org/x/mobile@latest
           go mod tidy -v
 
